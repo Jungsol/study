@@ -1,6 +1,6 @@
 package service;
 
-public class Cat {
+public class CatClassTest {
   // 전역변수, 인스턴스마다 개별적으로 메모리 공간을 할당받는다.
   String name;
   int age;
@@ -8,7 +8,7 @@ public class Cat {
   // 클래스변수, 클래스 내 모든 인스턴스가 공유하는 메모리 공간을 사용한다.
   static int numberOfCats = 0;
 
-  public Cat(String name, int age) {
+  public CatClassTest(String name, int age) {
     // 지역변수, 해당 메소드 내에서만 사용 가능하며, 메소드가 종료되면 메모리에서 해제된다.
     String nickname = "Kitty";
     this.name = name;
@@ -21,8 +21,8 @@ public class Cat {
   }
 
   public static void main(String[] args) {
-    Cat cat1 = new Cat("Luna", 3);
-    Cat cat2 = new Cat("Tiger", 5);
+    CatClassTest cat1 = new CatClassTest("Luna", 3);
+    CatClassTest cat2 = new CatClassTest("Tiger", 5);
 
     System.out.println("Number of cats: " + numberOfCats); // 클래스변수는 모든 인스턴스에서 공유되므로 2 출력
 

@@ -1,35 +1,29 @@
 package util;
 
 public class squareClassCalculator {
-		int[] width; // 가로
-		int[] height; // 세로
-		int[] area; // 넓이
-		int[] perimeter; // 둘레
-		
-		// 넓이 계산
-		public int areaCal(int width, int height) {
-			int areaResult;
-			areaResult = width * height;
-			
-			return areaResult;
+
+	// 넓이 계산[합, 평균]
+	public int[] areaCal(int[] widthArr, int[] heightArr) {
+		int[] areaArr = new int[widthArr.length];
+		for (int i = 0; i < widthArr.length; i++) {
+			areaArr[0] += widthArr[i] * heightArr[i];
+			if(i == widthArr.length-1) {
+				areaArr[1] = areaArr[0]/widthArr.length;
+			}
 		}
-		
-		//둘레 계산
-		public int perimeterCal(int width, int height) {
-			int perimeterResult;
-			perimeterResult = (width + height)*2;
-			
-			return perimeterResult;
+		return areaArr;
+	}
+
+	// 둘레 계산[합, 평균]
+	public int[] perimeterCal(int[] widthArr, int[] heightArr) {
+		int[] perimeterArr = new int[widthArr.length];
+		for (int i = 0; i < widthArr.length; i++) {
+			perimeterArr[0] += (widthArr[i] + heightArr[i])*2;
+			if(i == widthArr.length-1) {
+				perimeterArr[1] = perimeterArr[0]/widthArr.length;
+			}
 		}
-		
-		//최종결과 출력
-		public void prinResult() {
-			
-		}
-		
-	//	
-//		public void printResult(int area, int perimeter) {
-//			System.out.printf("5개 사격형의 넓이 총 합계는 %d, 둘레의 총 합은 %d입니다.", area, perimeter);
-//			System.out.printf("5개 사격형의 넓이 평균은 %d, 둘레 평균은 %d입니다.", area, perimeter);
-//		}
+		return perimeterArr;
+	}
+
 }
